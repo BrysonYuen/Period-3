@@ -1,0 +1,14 @@
+#left {
+  width: 50%;
+  height: 25%;
+  background-color: red;
+  position: relative;
+  float: left;
+}
+#right {
+  width: 50%;
+  height: 25%;
+  background-color: blue;
+  position: relative;
+  float: left;
+}

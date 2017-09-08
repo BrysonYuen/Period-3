@@ -1,0 +1,17 @@
+<html>
+  <head></head>
+  <body>
+  <script>
+    function deathNote() {
+    var death = Math.floor(Math.random() * 5);
+    document.getElementsByClassName('stem')[death].innerHTML = "RIP";
+  }
+  </script>
+  <p class="stem">Brandon Au</p>
+  <p class="stem">My Dreams of Not Being Bronze In Overwatch</p>
+  <p class="stem">Matthew Getty</p>
+  <p class="stem">Justin Teruya</p>
+  <p class="stem">My Will To Live</p>
+  <button onclick="deathNote()">Random Death</button>
+  </body>
+</html>

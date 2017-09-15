@@ -1,0 +1,24 @@
+<html>
+  <head>
+  </head>
+  <body>
+  <script>
+  function removeOne() {
+    //8 Select the duck in the list item and save it
+    var stupidKid = document.getElementsByTagName('li')[1];
+    //10 Select the containing ELement. The parentNode is the <il>
+    var hana = stupidKid.parentNode;
+    //12 Remove the element
+    hana.removeChild(stupidKid);
+  }
+  </script>
+    <button onclick="removeOne()">
+    Click Here
+    </button>
+    <ul>
+      <li>Justin</li>
+      <li>Brian Dang</li>
+      <li>Brandon Au</li>
+    </ul>
+  </body>
+</html>

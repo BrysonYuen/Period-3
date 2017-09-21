@@ -1,0 +1,32 @@
+<html>
+<head>
+  <style>
+    #dogOne {
+      float:left;
+    }
+    #dogTwo {
+      float:right;
+    }
+  </style>
+  <script>
+    function leftOn() {
+      document.getElementById('dogOne').style.boxShadow = "10px 10px 10px #000000";
+    }
+    function leftIn() {
+      document.getElementById('dogOne').style.boxShadow = "0px 0px 0px #ffffff";
+    }
+    function rightOn() {
+      document.getElementById('dogTwo').style.boxShadow = "-10px 10px 10px #000000";
+    }
+    function rightIn() {
+      document.getElementById('dogTwo').style.boxShadow = "0px 0px 0px #ffffff";
+      
+    }
+  </script>
+</head>
+<body>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBHu740HfSKHB0o5uRqtPm1EMJNjPpJXpuFOGZIUem_NRGzbkr7A" width="20%" id="dogOne" onmouseover="leftOn()" onmouseout="leftIn()">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPoxo7u9-dFS_5qHob2LF7DFFrQs1qJa4Clz_awKO0BnHhPwqW" width="20%" id="dogTwo" onmouseover="rightOn()" onmouseout="rightIn()">
+  
+</body>
+</html>

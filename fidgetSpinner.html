@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <style>
+      #fidgetSpinner{
+        width: 500px;
+        height: 500px;
+        background-image:url('http://www.asseenontvandbeyond.com/assets/images/fidget-spinner-black.jpg');
+        background-size: cover;
+      }
+      
+    </style>
+    <script>
+    i = 0;
+      function spin() {
+          document.getElementById('fidgetSpinner').style.transform = "rotate("+i+"deg)";
+          i++;
+        };
+    </script>
+  </head>
+  <body>
+    <div id="fidgetSpinner" onmousemove="spin()"></div>
+  </body>
+</html>

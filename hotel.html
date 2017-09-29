@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <style>
+      
+    </style>
+    <script>
+      function addGuest1() {
+      var newGuest1= document.createElement('li');
+      var newName1 = document.createTextNode(guest1.value);
+      newGuest1.appendChild(newName1);
+      var position1 = document.getElementsByTagName('ol')[0];
+      position1.appendChild(newGuest1);
+      }
+      
+      function removeGuest1() {
+      var x = removeGuest1.value;
+      var kickGuest1 = document.getElementsByTagName('li')[x];
+      var firstGuest = kickGuest1.parentNode;
+      firstGuest.removeChild(kickGuest1);
+      }
+      
+    </script>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="guest1">
+      <button onclick="addGuest1()">Add Guest</button>
+      <br>
+      <input type="text" id="leaveGuest1">
+      <button onclick="removeGuest1()">Remove Guest</button>
+      <ol>
+      </ol>
+    </div>
+    
+  </body>
+</html>

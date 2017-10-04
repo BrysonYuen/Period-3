@@ -1,36 +1,160 @@
 <html>
   <head>
     <style>
-      
     </style>
     <script>
-      function addGuest1() {
-      var newGuest1= document.createElement('li');
-      var newName1 = document.createTextNode(guest1.value);
-      newGuest1.appendChild(newName1);
-      var position1 = document.getElementsByTagName('ol')[0];
-      position1.appendChild(newGuest1);
+    a = 0;
+    b = 0;
+    c = 0;
+    d = 0;
+    //Room One
+    function addGuestOne() {
+    if (a === 3){
+      document.getElementById('paragraphOne').innerHTML="This room is full. Please wait until another person leaves.";
+    }
+    else {
+      var newGuestOne= document.createElement('li');
+      var newNameOne = document.createTextNode(guestOne.value);
+      newGuestOne.appendChild(newNameOne);
+      var positionOne = document.getElementsByTagName('ol')[0];
+      positionOne.appendChild(newGuestOne);
+      a++;
+      }
+    }
+      
+      function removeGuestOne() {
+      var x = leaveGuestOne.value;
+      var y = parseInt(x-1);
+      var kickGuestOne = document.getElementsByTagName('li')[y];
+      var firstGuest = kickGuestOne.parentNode;
+      firstGuest.removeChild(kickGuestOne);
+      document.getElementById('paragraphOne').innerHTML="";
+      a--;
       }
       
-      function removeGuest1() {
-      var x = removeGuest1.value;
-      var kickGuest1 = document.getElementsByTagName('li')[x];
-      var firstGuest = kickGuest1.parentNode;
-      firstGuest.removeChild(kickGuest1);
+    //Room Two
+    function addGuestTwo() {
+    if (b === 3){
+      document.getElementById('paragraphTwo').innerHTML="This room is full. Please wait until another person leaves.";
+    }
+    else {
+      var newGuestTwo= document.createElement('li');
+      var newNameTwo = document.createTextNode(guestTwo.value);
+      newGuestTwo.appendChild(newNameTwo);
+      var positionTwo = document.querySelectorAll("ol.guestListTwo")[0];
+      positionTwo.appendChild(newGuestTwo);
+      b++;
+      }
+    }
+      
+      function removeGuestTwo() {
+      var n = leaveGuestTwo.value;
+      var m = parseInt(n-1);
+      var testTwo = document.getElementById("testItTwo");
+      var kickGuestTwo = testItTwo.getElementsByTagName('li')[m];
+      var secondGuest = kickGuestTwo.parentNode;
+      secondGuest.removeChild(kickGuestTwo);
+      document.getElementById('paragraphTwo').innerHTML="";
+      b--;
       }
       
+    //Room Three
+    function addGuestThree() {
+    if (c === 3){
+      document.getElementById('paragraphThree').innerHTML="This room is full. Please wait until another person leaves.";
+    }
+    else {
+      var newGuestThree= document.createElement('li');
+      var newNameThree = document.createTextNode(guestThree.value);
+      newGuestThree.appendChild(newNameThree);
+      var positionThree = document.querySelectorAll("ol.guestListThree")[0];
+      positionThree.appendChild(newGuestThree);
+      c++;
+      }
+    }
+      
+      function removeGuestThree() {
+      var p = leaveGuestThree.value;
+      var k = parseInt(p-1);
+      var testThree = document.getElementById("testItThree");
+      var kickGuestThree = testItThree.getElementsByTagName('li')[k];
+      var thirdGuest = kickGuestThree.parentNode;
+      thirdGuest.removeChild(kickGuestThree);
+      document.getElementById('paragraphThree').innerHTML="";
+      c--;
+      }
+      
+    //Room Four
+    function addGuestFour() {
+    if (d === 3){
+      document.getElementById('paragraphFour').innerHTML="This room is full. Please wait until another person leaves.";
+    }
+    else {
+      var newGuestFour= document.createElement('li');
+      var newNameFour = document.createTextNode(guestFour.value);
+      newGuestFour.appendChild(newNameFour);
+      var positionFour = document.querySelectorAll("ol.guestListFour")[0];
+      positionFour.appendChild(newGuestFour);
+      d++;
+      }
+    }
+      
+      function removeGuestFour() {
+      var e = leaveGuestFour.value;
+      var f = parseInt(e-1);
+      var testFour = document.getElementById("testItFour");
+      var kickGuestFour = testItFour.getElementsByTagName('li')[f];
+      var fourthGuest = kickGuestFour.parentNode;
+      fourthGuest.removeChild(kickGuestFour);
+      document.getElementById('paragraphFour').innerHTML="";
+      d--;
+      }
+    
     </script>
   </head>
   <body>
-    <div>
-      <input type="text" id="guest1">
-      <button onclick="addGuest1()">Add Guest</button>
+    <div id="roomOne">
+      <input type="text" id="guestOne">
+      <button onclick="addGuestOne()" id="buttonOne">Add Guest By Name</button>
       <br>
-      <input type="text" id="leaveGuest1">
-      <button onclick="removeGuest1()">Remove Guest</button>
-      <ol>
+      <input type="number" id="leaveGuestOne">
+      <button onclick="removeGuestOne()">Remove Guest By Number</button>
+      <ol id="guestListOne">
       </ol>
+      <p id="paragraphOne"></p>
     </div>
     
+    <div id="roomTwo">
+      <input type="text" id="guestTwo">
+      <button onclick="addGuestTwo()" id="buttonTwo">Add Guest By Name</button>
+      <br>
+      <input type="number" id="leaveGuestTwo">
+      <button onclick="removeGuestTwo()">Remove Guest By Number</button>
+      <ol class="guestListTwo" id="testItTwo">
+      </ol>
+      <p id="paragraphTwo"></p>
+    </div>
+    
+    <div id="roomThree">
+      <input type="text" id="guestThree">
+      <button onclick="addGuestThree()" id="buttonThree">Add Guest By Name</button>
+      <br>
+      <input type="number" id="leaveGuestThree">
+      <button onclick="removeGuestThree()">Remove Guest By Number</button>
+      <ol class="guestListThree" id="testItThree">
+      </ol>
+      <p id="paragraphThree"></p>
+    </div>
+    
+    <div id="roomFour">
+      <input type="text" id="guestFour">
+      <button onclick="addGuestFour()" id="buttonFour">Add Guest By Name</button>
+      <br>
+      <input type="number" id="leaveGuestFour">
+      <button onclick="removeGuestFour()">Remove Guest By Number</button>
+      <ol class="guestListFour" id="testItFour">
+      </ol>
+      <p id="paragraphFour"></p>
+    </div>
   </body>
 </html>

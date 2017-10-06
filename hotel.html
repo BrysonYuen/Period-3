@@ -1,6 +1,85 @@
 <html>
   <head>
     <style>
+    #container {
+      position: absolute;
+      width: 100%;
+    }
+    
+    #headerOne {
+      text-align: center;
+      font-size: 38px;
+    }
+    
+    #welcome {
+      text-align: center;
+    }
+    
+    #info {
+      height: 40px;
+      width: 100%;
+      border: 1px solid black;
+      margin: 5px auto;
+      border-radius: 5px;
+      font-size: 20px;
+    }
+    
+    #aboutUs:Hover {
+     color: blue;
+    }
+    
+    #aboutUsDiv {
+      float: left;
+      width: 33%;
+      text-align: center;
+    }
+    
+    #supportUs:Hover {
+      color: blue;
+    }
+    
+    #supportUs {
+      float: left;
+      width: 33%;
+      text-align: center;
+    }
+    
+    #roomOne {
+      float: left;
+      width: 23.9%;
+      background-color: red;
+      border-radius: 25px;
+      padding: 5px;
+      margin: 2px;
+    }
+    
+    #roomTwo {
+      float: left;
+      width: 23.9%;
+      background-color: red;
+      border-radius: 25px;
+      padding: 5px;
+      margin: 2px;
+    }
+    
+    #roomThree {
+      float: left;
+      width: 23.9%;
+      background-color: red;
+      border-radius: 25px;
+      padding: 5px;
+      margin: 2px;
+    }
+    
+    #roomFour {
+      float: left;
+      width: 23.9%;
+      background-color: red;
+      border-radius: 25px;
+      padding: 5px;
+      margin: 2px;
+    }
+      
     </style>
     <script>
     a = 0;
@@ -10,11 +89,12 @@
     //Room One
     function addGuestOne() {
     if (a === 3){
-      document.getElementById('paragraphOne').innerHTML="This room is full. Please wait until another person leaves.";
+      document.getElementById('paragraphOne').innerHTML="This room is currently full. Please wait until another person leaves.";
     }
     else {
       var newGuestOne= document.createElement('li');
-      var newNameOne = document.createTextNode(guestOne.value);
+      var DT = new Date().toUTCString();
+      var newNameOne = document.createTextNode(guestOne.value + ", " + DT);
       newGuestOne.appendChild(newNameOne);
       var positionOne = document.getElementsByTagName('ol')[0];
       positionOne.appendChild(newGuestOne);
@@ -35,11 +115,12 @@
     //Room Two
     function addGuestTwo() {
     if (b === 3){
-      document.getElementById('paragraphTwo').innerHTML="This room is full. Please wait until another person leaves.";
+      document.getElementById('paragraphTwo').innerHTML="This room is currently full. Please wait until another person leaves.";
     }
     else {
       var newGuestTwo= document.createElement('li');
-      var newNameTwo = document.createTextNode(guestTwo.value);
+      var DT = new Date().toUTCString();
+      var newNameTwo = document.createTextNode(guestTwo.value + ", " + DT);
       newGuestTwo.appendChild(newNameTwo);
       var positionTwo = document.querySelectorAll("ol.guestListTwo")[0];
       positionTwo.appendChild(newGuestTwo);
@@ -61,11 +142,12 @@
     //Room Three
     function addGuestThree() {
     if (c === 3){
-      document.getElementById('paragraphThree').innerHTML="This room is full. Please wait until another person leaves.";
+      document.getElementById('paragraphThree').innerHTML="This room is currently full. Please wait until another person leaves.";
     }
     else {
       var newGuestThree= document.createElement('li');
-      var newNameThree = document.createTextNode(guestThree.value);
+      var DT = new Date().toUTCString();
+      var newNameThree = document.createTextNode(guestThree.value + ", " + DT);
       newGuestThree.appendChild(newNameThree);
       var positionThree = document.querySelectorAll("ol.guestListThree")[0];
       positionThree.appendChild(newGuestThree);
@@ -87,11 +169,12 @@
     //Room Four
     function addGuestFour() {
     if (d === 3){
-      document.getElementById('paragraphFour').innerHTML="This room is full. Please wait until another person leaves.";
+      document.getElementById('paragraphFour').innerHTML="This room is currently full. Please wait until another person leaves.";
     }
     else {
       var newGuestFour= document.createElement('li');
-      var newNameFour = document.createTextNode(guestFour.value);
+      var DT = new Date().toUTCString();
+      var newNameFour = document.createTextNode(guestFour.value + ", " + DT);
       newGuestFour.appendChild(newNameFour);
       var positionFour = document.querySelectorAll("ol.guestListFour")[0];
       positionFour.appendChild(newGuestFour);
@@ -109,52 +192,84 @@
       document.getElementById('paragraphFour').innerHTML="";
       d--;
       }
+      
+      function showAboutUs() {
+        document.getElementById('welcome').innerHTML = "We are the saltiest hotel, located at the Dead Sea. We only take payment in salt."
+      }
+      
+      function showSupportUs() {
+        document.getElementById('welcome').innerHTML = "We are taking salt donations in order to ascend to a new salt level."
+      }
     
     </script>
   </head>
+  
   <body>
+    <title>THE SALTIEST HOTEL</title>
+    <h1 id="headerOne">THE SALTIEST HOTEL</h1>
+    <div id="info">
+    <div id="aboutUsDiv">
+    <p id="aboutUs" onmousedown="showAboutUs()">About Us</p>
+    </div>
+    <div id="supportUsDiv">
+    <p id="supportUs" onmousedown="showSupportUs()">Support Us</p>
+    </div>
+    </div>
+    <div id="container">
+    <h2 id="welcome">Welcome</h2>
+    <div id="contentRoom">
+    <!-- Room One -->
     <div id="roomOne">
+      <h1>Room One</h1>
       <input type="text" id="guestOne">
-      <button onclick="addGuestOne()" id="buttonOne">Add Guest By Name</button>
+      <button onclick="addGuestOne()" id="buttonOne">Add Guest</button>
       <br>
       <input type="number" id="leaveGuestOne">
-      <button onclick="removeGuestOne()">Remove Guest By Number</button>
+      <button onclick="removeGuestOne()">Remove Guest</button>
       <ol id="guestListOne">
       </ol>
       <p id="paragraphOne"></p>
     </div>
     
+    <!-- Room Two -->
     <div id="roomTwo">
+      <h1>Room Two</h1>
       <input type="text" id="guestTwo">
-      <button onclick="addGuestTwo()" id="buttonTwo">Add Guest By Name</button>
+      <button onclick="addGuestTwo()" id="buttonTwo">Add Guest</button>
       <br>
       <input type="number" id="leaveGuestTwo">
-      <button onclick="removeGuestTwo()">Remove Guest By Number</button>
+      <button onclick="removeGuestTwo()">Remove Guest</button>
       <ol class="guestListTwo" id="testItTwo">
       </ol>
       <p id="paragraphTwo"></p>
     </div>
     
+    <!-- Room Three -->
     <div id="roomThree">
+      <h1>Room Three</h1>
       <input type="text" id="guestThree">
-      <button onclick="addGuestThree()" id="buttonThree">Add Guest By Name</button>
+      <button onclick="addGuestThree()" id="buttonThree">Add Guest</button>
       <br>
       <input type="number" id="leaveGuestThree">
-      <button onclick="removeGuestThree()">Remove Guest By Number</button>
+      <button onclick="removeGuestThree()">Remove Guest</button>
       <ol class="guestListThree" id="testItThree">
       </ol>
       <p id="paragraphThree"></p>
     </div>
     
+    <!--Room Four -->
     <div id="roomFour">
+      <h1>Room Four</h1>
       <input type="text" id="guestFour">
-      <button onclick="addGuestFour()" id="buttonFour">Add Guest By Name</button>
+      <button onclick="addGuestFour()" id="buttonFour">Add Guest</button>
       <br>
       <input type="number" id="leaveGuestFour">
-      <button onclick="removeGuestFour()">Remove Guest By Number</button>
+      <button onclick="removeGuestFour()">Remove Guest</button>
       <ol class="guestListFour" id="testItFour">
       </ol>
       <p id="paragraphFour"></p>
+    </div>
+    </div>
     </div>
   </body>
 </html>

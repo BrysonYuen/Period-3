@@ -1,6 +1,11 @@
 <html>
   <head>
     <style>
+    body {
+      background-image: url(http://israelbehindthenews.com/wp-content/uploads/2017/08/deadseasaltrocks_hdv.jpg);
+      background-size:
+    }
+    
     #container {
       position: absolute;
       width: 100%;
@@ -15,39 +20,10 @@
       text-align: center;
     }
     
-    #info {
-      height: 40px;
-      width: 100%;
-      border: 1px solid black;
-      margin: 5px auto;
-      border-radius: 5px;
-      font-size: 20px;
-    }
-    
-    #aboutUs:Hover {
-     color: blue;
-    }
-    
-    #aboutUsDiv {
-      float: left;
-      width: 33%;
-      text-align: center;
-    }
-    
-    #supportUs:Hover {
-      color: blue;
-    }
-    
-    #supportUs {
-      float: left;
-      width: 33%;
-      text-align: center;
-    }
-    
     #roomOne {
       float: left;
       width: 23.9%;
-      background-color: red;
+      background-color: #ffb6c1;
       border-radius: 25px;
       padding: 5px;
       margin: 2px;
@@ -56,7 +32,7 @@
     #roomTwo {
       float: left;
       width: 23.9%;
-      background-color: red;
+      background-color: #ffb6c1;
       border-radius: 25px;
       padding: 5px;
       margin: 2px;
@@ -65,7 +41,7 @@
     #roomThree {
       float: left;
       width: 23.9%;
-      background-color: red;
+      background-color: #ffb6c1;
       border-radius: 25px;
       padding: 5px;
       margin: 2px;
@@ -74,7 +50,7 @@
     #roomFour {
       float: left;
       width: 23.9%;
-      background-color: red;
+      background-color: #ffb6c1;
       border-radius: 25px;
       padding: 5px;
       margin: 2px;
@@ -193,30 +169,59 @@
       d--;
       }
       
-      function showAboutUs() {
-        document.getElementById('welcome').innerHTML = "We are the saltiest hotel, located at the Dead Sea. We only take payment in salt."
+      //Konami Code
+      // a key map of allowed keys
+      var allowedKeys = {
+      37: 'left',
+      38: 'up',
+      39: 'right',
+      40: 'down',
+      65: 'a',
+      66: 'b'
+      };
+
+      // the 'official' Konami Code sequence
+      var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
+
+      // a variable to remember the 'position' the user has reached so far.
+      var konamiCodePosition = 0;
+
+      // add keydown event listener
+      document.addEventListener('keydown', function(e) {
+      // get the value of the key code from the key map
+      var key = allowedKeys[e.keyCode];
+      // get the value of the required key from the konami code
+      var requiredKey = konamiCode[konamiCodePosition];
+
+      // compare the key with the required key
+      if (key == requiredKey) {
+
+      // move to the next key in the konami code sequence
+      konamiCodePosition++;
+
+      // if the last key is reached, activate cheats
+      if (konamiCodePosition == konamiCode.length) {
+      activateCheats();
+      konamiCodePosition = 0;
+      }
+      } else {
+      konamiCodePosition = 0;
+      }
+      });
+
+      function activateCheats() {
+      document.body.style.backgroundImage = "url('http://travelhdwallpapers.com/wp-content/uploads/2014/03/Dead-Sea-3.jpg')";
+
+      alert("STOP MATT´S GAMBLING ADDICTION");
       }
       
-      function showSupportUs() {
-        document.getElementById('welcome').innerHTML = "We are taking salt donations in order to ascend to a new salt level."
-      }
-    
     </script>
   </head>
   
   <body>
     <title>THE SALTIEST HOTEL</title>
     <h1 id="headerOne">THE SALTIEST HOTEL</h1>
-    <div id="info">
-    <div id="aboutUsDiv">
-    <p id="aboutUs" onmousedown="showAboutUs()">About Us</p>
-    </div>
-    <div id="supportUsDiv">
-    <p id="supportUs" onmousedown="showSupportUs()">Support Us</p>
-    </div>
-    </div>
     <div id="container">
-    <h2 id="welcome">Welcome</h2>
     <div id="contentRoom">
     <!-- Room One -->
     <div id="roomOne">
